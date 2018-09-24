@@ -268,7 +268,7 @@
   revision = "5c1d8c8469d1ed34b2aecf4c2305b3a57fff2ee3"
 
 [[projects]]
-  digest = "1:321fbe5b0e77758eca3271807cb003d25b76d99b819f86e01956bb9accea2494"
+  digest = "1:89864a5a6728be62bc3397a082ad80cb84c4e0049f77606833037a647e47c74f"
   name = "github.com/knative/pkg"
   packages = [
     "apis",
@@ -282,18 +282,14 @@
     "client/clientset/versioned",
     "client/clientset/versioned/scheme",
     "client/clientset/versioned/typed/authentication/v1alpha1",
-    "client/clientset/versioned/typed/duck/v1alpha1",
     "client/clientset/versioned/typed/istio/v1alpha3",
     "client/informers/externalversions",
     "client/informers/externalversions/authentication",
     "client/informers/externalversions/authentication/v1alpha1",
-    "client/informers/externalversions/duck",
-    "client/informers/externalversions/duck/v1alpha1",
     "client/informers/externalversions/internalinterfaces",
     "client/informers/externalversions/istio",
     "client/informers/externalversions/istio/v1alpha3",
     "client/listers/authentication/v1alpha1",
-    "client/listers/duck/v1alpha1",
     "client/listers/istio/v1alpha3",
     "configmap",
     "logging",
@@ -302,7 +298,7 @@
     "webhook",
   ]
   pruneopts = "NUT"
-  revision = "67830c7a64431edc38ee19628dc7116b0c6d99b5"
+  revision = "a133825579436877df315e7cb6d8aeba49b9f575"
 
 [[projects]]
   digest = "1:63f3974f3afe3dc5b6a115c0d53b0897cd01be6880c4bf5d014fc69a95db6ed1"
@@ -360,6 +356,14 @@
   pruneopts = "NUT"
   revision = "1df9eeb2bb81f327b96228865c5687bc2194af3f"
   version = "1.0.0"
+
+[[projects]]
+  digest = "1:93b1d84c5fa6d1ea52f4114c37714cddd84d5b78f151b62bb101128dd51399bf"
+  name = "github.com/pborman/uuid"
+  packages = ["."]
+  pruneopts = "NUT"
+  revision = "adf5a7427709b9deb95d29d3fa8a2bf9cfd388f1"
+  version = "v1.2"
 
 [[projects]]
   branch = "master"
@@ -756,7 +760,7 @@
   version = "kubernetes-1.11.0"
 
 [[projects]]
-  digest = "1:4b0d523ee389c762d02febbcfa0734c4530ebe87abe925db18f05422adcb33e8"
+  digest = "1:b9cccdbacdbdad18685fbafe0f65efd91380c2db233ee4e812cbe934fcc2ac5b"
   name = "k8s.io/apimachinery"
   packages = [
     "pkg/api/equality",
@@ -794,6 +798,7 @@
     "pkg/util/sets",
     "pkg/util/sets/types",
     "pkg/util/strategicpatch",
+    "pkg/util/uuid",
     "pkg/util/validation",
     "pkg/util/validation/field",
     "pkg/util/wait",
@@ -808,7 +813,7 @@
   version = "kubernetes-1.11.0"
 
 [[projects]]
-  digest = "1:460f9e74b2a51f2393c946f060f3dc382b00cfe671a838e4e0970835a79ffcea"
+  digest = "1:b2b13a7c98cee7405ee7e1cf93296d66de435196fc9a19047e31132f90a72030"
   name = "k8s.io/client-go"
   packages = [
     "discovery",
@@ -928,6 +933,8 @@
     "tools/clientcmd/api",
     "tools/clientcmd/api/latest",
     "tools/clientcmd/api/v1",
+    "tools/leaderelection",
+    "tools/leaderelection/resourcelock",
     "tools/metrics",
     "tools/pager",
     "tools/record",
@@ -1001,7 +1008,7 @@
   revision = "8a9b82f00b3a86eac24681da3f9fe6c34c01cea2"
 
 [[projects]]
-  digest = "1:d7f34929f9fd9822b69a72fd59d987baf5e2d01eb8fb42831504741c2d9f20c1"
+  digest = "1:b18104b0089c9483846dfcd124fd25a65361697004684b03d4de86546e9808d6"
   name = "sigs.k8s.io/controller-runtime"
   packages = [
     "pkg/cache",
@@ -1015,7 +1022,9 @@
     "pkg/handler",
     "pkg/internal/controller",
     "pkg/internal/recorder",
+    "pkg/leaderelection",
     "pkg/manager",
+    "pkg/patch",
     "pkg/predicate",
     "pkg/reconcile",
     "pkg/recorder",
@@ -1024,10 +1033,12 @@
     "pkg/runtime/signals",
     "pkg/source",
     "pkg/source/internal",
+    "pkg/webhook/admission",
+    "pkg/webhook/admission/types",
+    "pkg/webhook/types",
   ]
   pruneopts = "NUT"
-  revision = "21388f002e2c9d66214326bcd3486f0e1b5f4857"
-  source = "github.com/n3wscott/controller-runtime"
+  revision = "5373e8e1f3188ff4266902a6fc86372bc14b3815"
 
 [solve-meta]
   analyzer-name = "dep"
@@ -1043,6 +1054,7 @@
     "github.com/google/go-github/github",
     "github.com/google/uuid",
     "github.com/knative/pkg/apis",
+    "github.com/knative/pkg/apis/duck",
     "github.com/knative/pkg/apis/duck/v1alpha1",
     "github.com/knative/pkg/apis/istio/v1alpha3",
     "github.com/knative/pkg/client/clientset/versioned",
